@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object in JS</title>
+</head>
+<body>
+    <script>
+        //object{} - it is a collection of keys(property) and its value.
+        //create object - literal{} and new keyword
+
+        // create object for a student
+
+        let student={
+            id: 101,
+             name: "shambhavi",
+             age: 19,
+             IsMarried: false,
+             address: {
+                streetNo: 95,
+                area: "naini",
+                pincode: 211008,
+                city: "Prayagraj"
+             },
+             education:["B.tech", "CSE-AIML", 19, 2026],
+             getInfo:function() {
+                return "my details are "  + student.id +  " and "  + student.name;
+             },
+
+             examDone:null
+        };
+        console.log(student);
+        console.log(typeof(student));
+
+        //access object properties/keys using dot notations 
+
+        console.log(student.getInfo());
+        console.log(student.education[2026]);
+
+        //find object keys in object
+        console.log("id" in student);
+        //delete objects keys from object
+
+        console.log(delete student.IsMarried);
+        console.log(student);
+
+        //object's length
+
+        let StudentKeys=Object.keys(student)
+        console.log(StudentKeys.length);
+
+        // iterate keys of object
+
+        //using for----loop
+
+        for(let i=0; i< StudentKeys.length; i++){
+            console.log("Details are " + student[StudentKeys[i]]);
+        }
+
+        //for in loop
+        for(let x in student) {
+            console.log(student[x]);
+        } 
+
+        // create an object using new keyword
+
+        let myInfo=new Object();
+        myInfo.name="Vikas";
+        myInfo.age= 23;
+        myInfo.isMarried=true;
+        myInfo.city="Delhi";
+        console.log(myInfo.name);
+
+        //access object's property using [] notation
+        console.log(myInfo[ 'age']);
+
+        
+        
+
+    </script>
+    
+</body>
+</html>
